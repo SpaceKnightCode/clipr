@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "372285921840",
+    "project_id": "clipr-ecd2d",
+    "storage_bucket": "clipr-ecd2d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:372285921840:android:dd128736588463146a2bf5",
+        "android_client_info": {
+          "package_name": "com.example.clipr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "372285921840-er8v414i9j5oj5sc88ake861rrc5ffud.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkK95X1VrePmspjFKCmMHbKaL-jq7D-sM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "372285921840-er8v414i9j5oj5sc88ake861rrc5ffud.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
