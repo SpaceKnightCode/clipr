@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
+import 'otp_auth_page.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -9,6 +11,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController phoneController = TextEditingController();
+  String countryCode = "+91";
   final FocusNode _phoneFocusNode = FocusNode();
   @override
   Widget build(BuildContext context) {
@@ -61,6 +65,7 @@ class _LoginPageState extends State<LoginPage> {
               Container(
                 margin: const EdgeInsets.fromLTRB(40, 60, 40, 0),
                 child: IntlPhoneField(
+                  controller: phoneController,
                   autofocus: true,
                   decoration: InputDecoration(
                     labelText: 'Phone Number',
@@ -68,6 +73,9 @@ class _LoginPageState extends State<LoginPage> {
                     border: const UnderlineInputBorder(),
                   ),
                   initialCountryCode: 'IN',
+                  onCountryChanged: (value) {
+                    countryCode = value.dialCode;
+                  },
                   focusNode: _phoneFocusNode,
                   disableLengthCheck: true,
                   onTap: () {},
@@ -81,13 +89,19 @@ class _LoginPageState extends State<LoginPage> {
                     top: 50,
                   ),
                   child: FilledButton(
-                    child: Text(
+                    child: const Text(
                       "Login using phone",
-                      style: Theme.of(context).textTheme.labelMedium,
                     ),
                     onPressed: () {
                       _phoneFocusNode.unfocus();
-                      Navigator.pushNamed(context, '/otp');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => OTPPage(
+                            phoneNumber: "$countryCode${phoneController.text}",
+                          ),
+                        ),
+                      );
                     },
                   ),
                 ),

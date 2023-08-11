@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "372285921840-p991bvqecgb30bt77li2vnfkcslsau7b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.clipr",
+            "certificate_hash": "f014e2a88d46bd3f8c8bff5034f6f9a9a6b0d948"
+          }
+        },
+        {
           "client_id": "372285921840-er8v414i9j5oj5sc88ake861rrc5ffud.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,6 +37,13 @@
             {
               "client_id": "372285921840-er8v414i9j5oj5sc88ake861rrc5ffud.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "372285921840-m3aj5kntm1q3kaps9qanqhobh96mrdh0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.clipr"
+              }
             }
           ]
         }

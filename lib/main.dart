@@ -24,17 +24,44 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color(0xFFd45113),
-          background: Color(0xfff8dda4),
+          background: const Color(0xfff8dda4),
         ),
         useMaterial3: true,
+        appBarTheme: const AppBarTheme(
+            toolbarHeight: 70,
+            backgroundColor: Color(0xFF813405),
+            centerTitle: true,
+            foregroundColor: Colors.white),
         buttonTheme: const ButtonThemeData(
           buttonColor: Color(0xFFd45113),
           textTheme: ButtonTextTheme.primary,
         ),
         textTheme: GoogleFonts.oswaldTextTheme().copyWith(
+          titleMedium: GoogleFonts.oswald(
+            color: const Color(0xFFddf9c1),
+            fontSize: 18,
+          ),
+          titleLarge: GoogleFonts.oswald(
+            color: const Color(0xFFddf9c1),
+            fontSize: 20,
+          ),
+          titleSmall: GoogleFonts.oswald(
+            color: const Color(0xFFddf9c1),
+            fontSize: 15,
+          ),
           displayMedium: GoogleFonts.oswald(
             color: const Color(0xFFd45113),
             fontSize: 20,
+          ),
+          displaySmall: GoogleFonts.oswald(
+            color: const Color(0xFFd45113),
+            fontFeatures: [],
+            fontSize: 10,
+          ),
+          displayLarge: GoogleFonts.oswald(
+            color: const Color(0xFFd45113),
+            fontFeatures: [],
+            fontSize: 35,
           ),
           labelLarge: GoogleFonts.oswald(
             color: Colors.white,
@@ -58,19 +85,20 @@ class MyApp extends StatelessWidget {
           ),
           bodyMedium: GoogleFonts.oswald(
             color: Colors.white,
-            fontSize: 18,
+            fontSize: 25,
             fontWeight: FontWeight.w500,
           ),
           bodySmall: GoogleFonts.oswald(
             color: Colors.white,
-            fontSize: 18,
+            fontSize: 20,
             fontWeight: FontWeight.w500,
           ),
         ),
       ),
       home: const LoginPage(),
       routes: {
-        '/otp': (context) => OTPPage(), // Named route for the destination page
+        '/otp': (context) =>
+            LoginPage(), // Named route for the destination page
       },
     );
   }
