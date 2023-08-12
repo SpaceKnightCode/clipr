@@ -1,5 +1,3 @@
-import 'package:clipr/otp_auth_page.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Homepage extends StatefulWidget {
@@ -10,16 +8,16 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  TextEditingController _searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: FilledButton(
-        child: Text("sign out "),
-        onPressed: () {
-          FirebaseAuth.instance.signOut();
-          Navigator.popAndPushNamed(context, "/login"!);
-        },
+        child: Scaffold(
+      body: Container(
+        child: TextField(
+          controller: _searchController,
+        ),
       ),
-    );
+    ));
   }
 }

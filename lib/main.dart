@@ -1,5 +1,4 @@
 import 'package:clipr/homepage.dart';
-import 'package:clipr/otp_auth_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,76 +21,115 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFFd45113),
-          background: const Color(0xfff8dda4),
-        ),
+      themeMode: ThemeMode.system,
+      darkTheme: ThemeData.dark().copyWith(
         useMaterial3: true,
         appBarTheme: const AppBarTheme(
             toolbarHeight: 70,
-            backgroundColor: Color(0xFF813405),
             centerTitle: true,
             foregroundColor: Colors.white),
         buttonTheme: const ButtonThemeData(
-          buttonColor: Color(0xFFd45113),
           textTheme: ButtonTextTheme.primary,
         ),
         textTheme: GoogleFonts.oswaldTextTheme().copyWith(
           titleMedium: GoogleFonts.oswald(
-            color: const Color(0xFFddf9c1),
             fontSize: 18,
           ),
           titleLarge: GoogleFonts.oswald(
-            color: const Color(0xFFddf9c1),
             fontSize: 20,
           ),
           titleSmall: GoogleFonts.oswald(
-            color: const Color(0xFFddf9c1),
             fontSize: 15,
           ),
           displayMedium: GoogleFonts.oswald(
-            color: const Color(0xFFd45113),
             fontSize: 20,
           ),
           displaySmall: GoogleFonts.oswald(
-            color: const Color(0xFFd45113),
             fontFeatures: [],
             fontSize: 10,
           ),
           displayLarge: GoogleFonts.oswald(
-            color: const Color(0xFFd45113),
             fontFeatures: [],
             fontSize: 35,
           ),
           labelLarge: GoogleFonts.oswald(
-            color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.w500,
           ),
           labelSmall: GoogleFonts.oswald(
-            color: Colors.white,
             fontSize: 14,
             fontWeight: FontWeight.w500,
           ),
           labelMedium: GoogleFonts.oswald(
-            color: Colors.white,
             fontSize: 17,
             fontWeight: FontWeight.w500,
           ),
           bodyLarge: GoogleFonts.oswald(
-            color: Colors.white,
             fontSize: 30,
             fontWeight: FontWeight.w500,
           ),
           bodyMedium: GoogleFonts.oswald(
-            color: Colors.white,
             fontSize: 25,
             fontWeight: FontWeight.w500,
           ),
           bodySmall: GoogleFonts.oswald(
-            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ),
+      title: 'Flutter Demo',
+      theme: ThemeData.light().copyWith(
+        useMaterial3: true,
+        appBarTheme: const AppBarTheme(
+            toolbarHeight: 70,
+            centerTitle: true,
+            foregroundColor: Colors.white),
+        buttonTheme: const ButtonThemeData(
+          textTheme: ButtonTextTheme.primary,
+        ),
+        textTheme: GoogleFonts.oswaldTextTheme().copyWith(
+          titleMedium: GoogleFonts.oswald(
+            fontSize: 18,
+          ),
+          titleLarge: GoogleFonts.oswald(
+            fontSize: 20,
+          ),
+          titleSmall: GoogleFonts.oswald(
+            fontSize: 15,
+          ),
+          displayMedium: GoogleFonts.oswald(
+            fontSize: 20,
+          ),
+          displaySmall: GoogleFonts.oswald(
+            fontFeatures: [],
+            fontSize: 10,
+          ),
+          displayLarge: GoogleFonts.oswald(
+            fontFeatures: [],
+            fontSize: 35,
+          ),
+          labelLarge: GoogleFonts.oswald(
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+          ),
+          labelSmall: GoogleFonts.oswald(
+            fontSize: 14,
+            fontWeight: FontWeight.w500,
+          ),
+          labelMedium: GoogleFonts.oswald(
+            fontSize: 17,
+            fontWeight: FontWeight.w500,
+          ),
+          bodyLarge: GoogleFonts.oswald(
+            fontSize: 30,
+            fontWeight: FontWeight.w500,
+          ),
+          bodyMedium: GoogleFonts.oswald(
+            fontSize: 25,
+            fontWeight: FontWeight.w500,
+          ),
+          bodySmall: GoogleFonts.oswald(
             fontSize: 20,
             fontWeight: FontWeight.w500,
           ),

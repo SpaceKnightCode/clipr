@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
                 width: MediaQuery.of(context).size.width,
                 child: ColorFiltered(
                   colorFilter: const ColorFilter.mode(
-                    Color(0xFFd45113),
+                    Color(0xFFFFB800),
                     BlendMode.srcIn,
                   ),
                   child: Image.asset(
