@@ -45,9 +45,18 @@ class _OTPPageState extends State<OTPPage> {
         });
   }
 
-  Future<void> verifyOTP() async {
+  Future<void> signIn() async {
     await FirebaseAuth.instance.signInWithCredential(
         PhoneAuthProvider.credential(verificationId: verID, smsCode: otpPin));
+    Navigator.popAndPushNamed(context, "/home"!);
+  }
+
+  static Future<void> signOut() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+    } catch (e) {
+      print(e.toString());
+    }
   }
 
   void showSnackBarText(String message) {
@@ -103,7 +112,7 @@ class _OTPPageState extends State<OTPPage> {
           ),
           OTPTextField(
             controller: otpController,
-            length: 4,
+            length: 6,
             width: MediaQuery.of(context).size.width,
             textFieldAlignment: MainAxisAlignment.spaceAround,
             fieldWidth: 45,
@@ -142,7 +151,13 @@ class _OTPPageState extends State<OTPPage> {
               Container(
                 height: 60,
                 child: FilledButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(
+                      () {
+                        signIn();
+                      },
+                    );
+                  },
                   child: const Text("Verify Code"),
                 ),
               ),

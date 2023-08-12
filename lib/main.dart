@@ -1,4 +1,6 @@
+import 'package:clipr/homepage.dart';
 import 'package:clipr/otp_auth_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -95,10 +97,19 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const LoginPage(),
+      home: StreamBuilder<User?>(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            return Homepage();
+          } else {
+            return LoginPage();
+          }
+        },
+      ),
       routes: {
-        '/otp': (context) =>
-            LoginPage(), // Named route for the destination page
+        '/home': (context) => Homepage(),
+        '/login': (context) => LoginPage(),
       },
     );
   }
